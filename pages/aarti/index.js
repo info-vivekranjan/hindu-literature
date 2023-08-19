@@ -9,6 +9,7 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import { Card } from "@mui/material";
 import { Inter } from 'next/font/google'
+import Link from 'next/link';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -28,6 +29,7 @@ export default function Aarti({posts}) {
           return (
             <Box key={item.id}>
               <Card sx={{ mb: "15px" }}>
+                <Link href={`/aarti/${item.id}`}>
                 <ListItem alignItems="flex-start">
                   <ListItemAvatar sx={{ mr: "20px" }}>
                     <Image
@@ -42,6 +44,7 @@ export default function Aarti({posts}) {
                     secondary={<Box>{item.card_intro}</Box>}
                   />
                 </ListItem>
+                </Link>
               </Card>
             </Box>
           );
@@ -55,7 +58,7 @@ export default function Aarti({posts}) {
 export async function getServerSideProps() {
     // Call an external API endpoint to get posts.
     // You can use any data fetching library
-    const res = await fetch('http://localhost:3000/api/hindu-literature')
+    const res = await fetch('https://hindu-literature.vercel.app/api/aarti')
     const posts = await res.json()
    
     // By returning { props: { posts } }, the Blog component
