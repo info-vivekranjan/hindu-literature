@@ -25,10 +25,10 @@ export default function Aarti({ posts }) {
       <main>
         <Grid container sx={{ pl: "10px", pr: "10px" }}>
           <Grid item xs={0} md={4}></Grid>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} md={5}>
             <Typography variant="h4" style={{ textAlign: 'center' }}>Aarti Sangrah</Typography>
             <List
-              sx={{ width: "100%", maxWidth: 500, bgcolor: "background.paper" }}
+              sx={{ width: "100%", bgcolor: "background.paper" }}
             >
               {posts?.data?.map((item) => {
                 return (
@@ -56,7 +56,7 @@ export default function Aarti({ posts }) {
               })}
             </List>
           </Grid>
-          <Grid item xs={0} md={4}></Grid>
+          <Grid item xs={0} md={3}></Grid>
         </Grid>
       </main>
     </>

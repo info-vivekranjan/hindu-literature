@@ -25,7 +25,7 @@ export default function AartiData({ posts }) {
       <main>
         <Grid container sx={{pl: '10px', pr: '10px'}}>
           <Grid item xs={0} md={4}></Grid>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} md={5}>
             {posts?.data?.map((item) => {
               return (
                 <Box>
@@ -35,14 +35,14 @@ export default function AartiData({ posts }) {
                   <br />
                   <br />
                   <div
-                    className="product-des"
+                    style={{ fontSize: '24px' }}
                     dangerouslySetInnerHTML={{ __html: item.description }}
                   />
                 </Box>
               );
             })}
           </Grid>
-          <Grid item xs={0} md={4}></Grid>
+          <Grid item xs={0} md={3}></Grid>
         </Grid>
       </main>
     </>
