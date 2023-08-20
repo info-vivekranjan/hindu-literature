@@ -53,7 +53,7 @@ export async function getServerSideProps(param) {
   const { id } = param.query;
   // Call an external API endpoint to get posts.
   // You can use any data fetching library
-  const res = await fetch(`http://localhost:3000/api/aarti/${id}`);
+  const res = await fetch(`https://hindu-literature.vercel.app/api/aarti/${id}`);
   const posts = await res.json();
 
   // By returning { props: { posts } }, the Blog component
