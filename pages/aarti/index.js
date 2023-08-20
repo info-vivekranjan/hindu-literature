@@ -66,7 +66,7 @@ export default function Aarti({ posts }) {
 export async function getServerSideProps() {
   // Call an external API endpoint to get posts.
   // You can use any data fetching library
-  const res = await fetch("https://hindu-literature.vercel.app/api/aarti");
+  const res = await fetch("http://localhost:3000/api/aarti");
   const posts = await res.json();
 
   // By returning { props: { posts } }, the Blog component
