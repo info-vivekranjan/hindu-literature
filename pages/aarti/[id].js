@@ -23,12 +23,12 @@ export default function AartiData({ posts }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Grid container sx={{pl: '10px', pr: '10px'}}>
+        <Grid container>
           <Grid item xs={0} md={4}></Grid>
           <Grid item xs={12} md={5}>
             {posts?.data?.map((item) => {
               return (
-                <Box>
+                <Box sx={{ textAlign: 'center' }}>
                   <Typography variant="h5">{item.title}</Typography>
                   <br />
                   <Image src={item.image} width={400} height={400} />
