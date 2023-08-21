@@ -60,6 +60,7 @@ export default function Aarti({ posts }) {
               placeholder="Enter a search term"
               value={searchText}
               onChange={(e) => setSearchText(e.target.value)}
+              sx={{ width: '84%' }}
             />
             <Fab
               size="small"
