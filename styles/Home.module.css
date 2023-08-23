@@ -47,6 +47,19 @@
   background-color: #F4A761;
 }
 
+.eachSlideCard{
+  border: 1px solid orange;
+  width: 400px;
+  height: 450px;
+  padding: 10px;
+  text-align: center;
+}
+
+.eachSlideCard img{
+  width: 80%;
+  height: 80%;
+}
+
 @media screen and (max-width: 768px){
   .optionCard{
     margin-bottom: 10px;
