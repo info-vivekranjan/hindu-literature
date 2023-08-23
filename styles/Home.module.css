@@ -10,7 +10,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
-  min-height: 90vh;
+  min-height: 95vh;
   color: white;
   display: flex;
   flex-direction: column;
@@ -23,7 +23,7 @@
   position: absolute;
   width: 70%;
   height: 180px;
-  bottom: 40px;
+  bottom: 10px;
   left: 15%;
   box-shadow: 10px 12px 30px 12px #d6d6d6;
   border-radius: 5px;
@@ -48,7 +48,7 @@
 }
 
 .eachSlideCard{
-  border: 1px solid orange;
+  border: 1px solid #F7BE7C;
   width: 400px;
   height: 450px;
   padding: 10px;

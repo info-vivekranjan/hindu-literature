@@ -69,6 +69,20 @@ export default function Home() {
           </Grid>
         </div>
         <div style={{ marginTop: "250px", marginBottom: "50px" }}>
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <div>
+              <Typography variant="h4">Some of special Aarti's</Typography>
+              <div
+                style={{
+                  width: "350px",
+                  height: "3px",
+                  backgroundColor: "#F7BE7C",
+                }}
+              ></div>
+            </div>
+          </div>
+          <br />
+          <br />
           <Swiper
             style={{
               "--swiper-navigation-color": "#F7BE7C",

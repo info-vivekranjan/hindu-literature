@@ -23,7 +23,7 @@ export default function Aarti({ posts }) {
   const handleSearch = async () => {
     if (searchText) {
       const response = await fetch(
-        `https://hindu-literature.vercel.app/api/aarti?substring=${searchText}`
+        `http://localhost:3000/api/aarti?substring=${searchText}`
       );
       const data = await response.json();
       setFilteredData(data);
@@ -113,7 +113,7 @@ export async function getServerSideProps(param) {
   const { substring } = param.query;
   // Call an external API endpoint to get posts.
   // You can use any data fetching library
-  const res = await fetch(`https://hindu-literature.vercel.app/api/aarti`);
+  const res = await fetch(`http://localhost:3000/api/aarti`);
   const posts = await res.json();
 
   // By returning { props: { posts } }, the Blog component
