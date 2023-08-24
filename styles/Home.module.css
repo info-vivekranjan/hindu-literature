@@ -36,6 +36,7 @@
 .optionCard{
   background-color: #F7BE7C;
   color: white;
+  border: 4px solid #F4A761;
 }
 
 .card{
