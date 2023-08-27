@@ -13,12 +13,21 @@ import Link from "next/link";
 import { useState } from "react";
 import Fab from "@mui/material/Fab";
 import SearchIcon from "@mui/icons-material/Search";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Aarti({ posts }) {
   const [searchText, setSearchText] = useState("");
   const [filteredData, setFilteredData] = useState(posts);
+
+  const outerTheme = createTheme({
+    palette: {
+      primary: {
+        main: "#f4a761",
+      },
+    },
+  });
 
   const handleSearch = async () => {
     if (searchText) {
@@ -41,69 +50,72 @@ export default function Aarti({ posts }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Grid container>
-          <Grid item xs={0} md={4}></Grid>
-          <Grid item xs={12} md={5}>
-            <Typography variant="h4" style={{ textAlign: "center" }}>
-              {" "}
-              Aarti Sangrah
-            </Typography>
+        <ThemeProvider theme={outerTheme}>
+          <Grid container>
+            <Grid item xs={0} md={4}></Grid>
+            <Grid item xs={12} md={5}>
+              <Typography variant="h4" style={{ textAlign: "center" }}>
+                {" "}
+                Aarti Sangrah
+              </Typography>
+            </Grid>
+            <Grid item xs={0} md={3}></Grid>
           </Grid>
-          <Grid item xs={0} md={3}></Grid>
-        </Grid>
-        <Grid container>
-          <Grid item xs={0} md={9}></Grid>
-          <Grid item xs={12} md={3}>
-            <TextField
-              variant="standard"
-              type="text"
-              placeholder="Enter a search term"
-              value={searchText}
-              onChange={(e) => setSearchText(e.target.value)}
-              sx={{ width: '84%' }}
-            />
-            <Fab
-              size="small"
-              color="primary"
-              aria-label="search"
-              onClick={handleSearch}
-            >
-              <SearchIcon />
-            </Fab>
+          <Grid container>
+            <Grid item xs={0} md={9}></Grid>
+            <Grid item xs={12} md={3}>
+              <TextField
+                variant="standard"
+                type="text"
+                placeholder="Enter a search term"
+                value={searchText}
+                onChange={(e) => setSearchText(e.target.value)}
+                sx={{ width: "84%" }}
+              />
+              <Fab
+                size="small"
+                color="primary"
+                aria-label="search"
+                onClick={handleSearch}
+                sx={{ color: 'white' }}
+              >
+                <SearchIcon />
+              </Fab>
+            </Grid>
           </Grid>
-        </Grid>
-        <Grid container>
-          <Grid item xs={0} md={4}></Grid>
-          <Grid item xs={12} md={5}>
-            <List sx={{ width: "100%", bgcolor: "background.paper" }}>
-              {filteredData?.data?.map((item) => {
-                return (
-                  <Box key={item.id}>
-                    <Card sx={{ mb: "15px" }}>
-                      <Link href={`/aarti/${item.id}`}>
-                        <ListItem alignItems="flex-start">
-                          <ListItemAvatar sx={{ mr: "20px" }}>
-                            <Image
-                              alt={item.title}
-                              src={item.image}
-                              width={100}
-                              height={100}
+          <Grid container>
+            <Grid item xs={0} md={4}></Grid>
+            <Grid item xs={12} md={5}>
+              <List sx={{ width: "100%", bgcolor: "background.paper" }}>
+                {filteredData?.data?.map((item) => {
+                  return (
+                    <Box key={item.id}>
+                      <Card sx={{ mb: "15px" }}>
+                        <Link href={`/aarti/${item.id}`}>
+                          <ListItem alignItems="flex-start">
+                            <ListItemAvatar sx={{ mr: "20px" }}>
+                              <Image
+                                alt={item.title}
+                                src={item.image}
+                                width={100}
+                                height={100}
+                              />
+                            </ListItemAvatar>
+                            <ListItemText
+                              primary={item.title}
+                              secondary={<Box>{item.card_intro}</Box>}
                             />
-                          </ListItemAvatar>
-                          <ListItemText
-                            primary={item.title}
-                            secondary={<Box>{item.card_intro}</Box>}
-                          />
-                        </ListItem>
-                      </Link>
-                    </Card>
-                  </Box>
-                );
-              })}
-            </List>
+                          </ListItem>
+                        </Link>
+                      </Card>
+                    </Box>
+                  );
+                })}
+              </List>
+            </Grid>
+            <Grid item xs={0} md={3}></Grid>
           </Grid>
-          <Grid item xs={0} md={3}></Grid>
-        </Grid>
+        </ThemeProvider>
       </main>
     </>
   );
