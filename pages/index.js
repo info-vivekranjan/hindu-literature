@@ -68,7 +68,25 @@ export default function Home() {
             <Grid item xs={12} md={1}></Grid>
           </Grid>
         </div>
-        <div style={{ marginTop: "250px", marginBottom: "50px" }}>
+        <div className={styles.marquee} style={{ marginTop: "100px" }}>
+          <p>
+            ॐ भूर्भुवः स्वः । तत्सवितुर्वरेण्यं भर्गो देवस्यः धीमहि । धियो यो नः
+            प्रचोदयात् ।।
+          </p>
+          <br />
+          <br />
+          <p>
+            ॐ त्र्यम्बकं यजामहे सुगन्धिं पुष्टिवर्धनम् | उर्वारुकमिव
+            बन्धनान्मृत्योर्मुक्षीय माऽमृतात् ||
+          </p>
+          <br />
+          <br />
+          <p>
+            त्वमेव माता च पिता त्वमेव। त्वमेव बन्धुश्च सखा त्वमेव। त्वमेव विद्या
+            द्रविणम् त्वमेव। त्वमेव सर्वम् मम देव देव।
+          </p>
+        </div>
+        <div style={{ marginTop: "200px", marginBottom: "50px" }}>
           <div style={{ display: "flex", justifyContent: "center" }}>
             <div>
               <Typography variant="h4">Some of special Aarti's</Typography>
